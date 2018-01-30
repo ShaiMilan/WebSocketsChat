@@ -7,7 +7,6 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by shaim on 29/01/2018.
@@ -29,7 +28,7 @@ public class DateNotifier {
 	/*@Scheduled(fixedRate = 5000)*/
 	public void reportCurrentTime() {
 		log.info("just a log");
-		simpMessagingTemplate.convertAndSendToUser("/topic/greetings", new Greeting(String.format("The time is now %s", dateFormat.format(new Date()))));
+		//simpMessagingTemplate.convertAndSendToUser("/topic/greetings", new Greeting(String.format("The time is now %s", dateFormat.format(new Date()))));
 
 	}
 
