@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>  
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        height: 100%;
+      }
+
+      .messageList {
+        box-sizing: border-box;
+        width: 800px;
+        position: relative;
+        top: 20px;
+        height: calc(100% - 40px);
+        border: 3px solid black;
+        padding: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: -6px 7px 20px -9px black;
+      }
+
+      .senderDiv {
+        bottom: 0;
+      }
+
+      .messageContiner {
+        margin-bottom: 15px;
+        text-align: right;
+      }
+
+      .messageContiner.other {
+        text-align: left;
+      }
+
+      .textBubble {
+        text-align: left;
+        position: relative;
+        font-family: sans-serif;
+        color: #edfdff;
+        display: inline-block;
+        padding: 10px 20px;
+        max-width: 400px;
+      }
+
+      .sentText {
+        background: linear-gradient(#046ffd, #1accef);
+        border-radius: 20px 20px 0px 20px;
+        box-shadow: -6px 7px 20px -9px black;
+      }
+
+      .sentText:after {
+        content: '';
+        position: absolute;
+        width: 23px;
+        height: 29px;
+        top: 6px;
+        left: 6px;
+        border-radius: 50%;
+        box-shadow: -4px -5px 6px -4px white;
+        background-color: transparent;
+      }
+
+      .sentText:before {
+        content: '';
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        bottom: -5px;
+        right: -17px;
+        border-radius: 20% 50% 50% 50%;
+        box-shadow: -10px 2px 0px 0px #1accef;
+        background-color: transparent;
+        z-index: -1;
+      }
+
+      .recivedText {
+        background: linear-gradient(#1a9b45, #81efb3);
+        border-radius: 20px 20px 20px 0;
+        box-shadow: 6px 7px 20px -9px black;
+      }
+
+      .recivedText:after {
+        content: '';
+        position: absolute;
+        width: 23px;
+        height: 29px;
+        top: 6px;
+        right: 6px;
+        border-radius: 50%;
+        box-shadow: 4px -5px 6px -4px white;
+        background-color: transparent;
+      }
+
+      .recivedText:before {
+        content: '';
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        bottom: -5px;
+        left: -17px;
+        border-radius: 20% 20% 50% 50%;
+        box-shadow: 10px 2px 0px 0px #81efb3;
+        background-color: transparent;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="messageList">
+      <label>Enter your name: </label>
+      <input class="username" type="text" />
+      <button class="connectButton">Connect</button>
+  
+      <br><br>
+
+      <label>Enter your message: </label>
+      <input class="message" type="text" />
+      <button class="sendMessage">Send</button>
+      <!-- <div class="senderDiv">
+        <input type="text" class="textMessageInput" />
+      </div> -->
+    </div>
+      <!-- <div class="messageContiner my">
+        <div class="textBubble sentText">
+          This is my message!
+        </div>
+      </div> -->
+    <script>
+      $(document).ready(function() {
+        $('.sendMessage').attr('disabled', true);
+
+        $('.connectButton').click(function() {
+          var sock = io('http://10.54.1.12:7777/gs-guide-websocket');
+
+          sock.on('connect', function(socket){
+            console.log('Socket has connected with id: ', sock.id);
+            sock.emit('registerUser', $('.username').value());
+            $('.sendMessage').attr('disabled', false);
+            $('.connectButton').attr('disabled', true);
+          })
+          .on('disconnect', function(){
+              console.log('Socket disconnected...');
+          })
+          .on('message', function(data) {
+            console.log(data);
+          })
+
+          $('.connectButton').click(function() {
+            sock.connect();
+          })
+
+          $('.sendMessage').click(function() {
+            sock.emit('sendMessage', {
+              name: $('.username').value(),
+              message: $('.message').value(),
+              date: Date.now.getTime()
+            });
+          })
+        });
+      });
+    </script>
+  </body>
+</html> 
