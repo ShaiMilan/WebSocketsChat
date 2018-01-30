@@ -134,36 +134,42 @@
       </div> -->
     <script>
       $(document).ready(function() {
+        var socketPath = '/gs-guide-websocket/info';
+
         $('.sendMessage').attr('disabled', true);
 
-        $('.connectButton').click(function() {
-          var sock = io('http://10.54.1.12:7777/gs-guide-websocket');
-
-          sock.on('connect', function(socket){
-            console.log('Socket has connected with id: ', sock.id);
-            sock.emit('registerUser', $('.username').value());
-            $('.sendMessage').attr('disabled', false);
-            $('.connectButton').attr('disabled', true);
-          })
-          .on('disconnect', function(){
-              console.log('Socket disconnected...');
-          })
-          .on('message', function(data) {
-            console.log(data);
-          })
-
-          $('.connectButton').click(function() {
-            sock.connect();
-          })
-
-          $('.sendMessage').click(function() {
-            sock.emit('sendMessage', {
-              name: $('.username').value(),
-              message: $('.message').value(),
-              date: Date.now.getTime()
-            });
-          })
+        var sock = io('/', {
+          path: socketPath,
+          autoConnect: false
         });
+
+        sock.on('connect', function(socket){
+          console.log('Socket has connected with id: ', sock.id);
+          sock.emit('registerUser', $('.username').value());
+          $('.sendMessage').attr('disabled', false);
+          $('.connectButton').attr('disabled', true);
+        })
+        .on('connect_error', function (err) {
+          console.log('connect_error', err);
+        })
+        .on('disconnect', function(){
+          console.log('Socket disconnected...');
+        })
+        .on('message', function(data) {
+          console.log(data);
+        })
+
+        $('.connectButton').click(function() {
+          sock.connect();
+        })
+
+        $('.sendMessage').click(function() {
+          sock.emit('sendMessage', {
+            name: $('.username').value(),
+            message: $('.message').value(),
+            date: Date.now.getTime()
+          });
+        })
       });
     </script>
   </body>
