@@ -1,0 +1,10 @@
+<h1>Chat home Yes</h1>
+<button (click)="connect()" [disabled]="socketIsOpen">Connect</button>
+<button (click)="disconnect()" [disabled]="!socketIsOpen">Disconnect</button>
+
+<div *ngIf="socketIsOpen">
+  <label>Echo Message: </label><input type="text" #message>
+  <button (click)="sendMessage(message.value)">Send</button>
+</div>
+
+<p #messages></p>
