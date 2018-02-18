@@ -79,13 +79,17 @@ var AppComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_router_config__ = __webpack_require__("../../../../../src/app/app.router.config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_socket_service__ = __webpack_require__("../../../../../src/app/services/socket.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_sock_js_service__ = __webpack_require__("../../../../../src/app/services/sock-js.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_router_config__ = __webpack_require__("../../../../../src/app/app.router.config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_socket_service__ = __webpack_require__("../../../../../src/app/services/socket.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_sock_js_service__ = __webpack_require__("../../../../../src/app/services/sock-js.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__chat_message_chat_message_component__ = __webpack_require__("../../../../../src/app/chat-message/chat-message.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__chat_message_container_chat_message_container_component__ = __webpack_require__("../../../../../src/app/chat-message-container/chat-message-container.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -100,23 +104,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_3__home_home_component__["a" /* HomeComponent */]
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__chat_message_chat_message_component__["a" /* ChatMessageComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__chat_message_container_chat_message_container_component__["a" /* ChatMessageContainerComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_router_config__["a" /* appRoutes */])
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_router_config__["a" /* appRoutes */])
             ],
             providers: [
-                { provide: __WEBPACK_IMPORTED_MODULE_6__services_socket_service__["b" /* SocketService */], useClass: __WEBPACK_IMPORTED_MODULE_7__services_sock_js_service__["a" /* SockJsService */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_8__services_socket_service__["b" /* SocketService */], useClass: __WEBPACK_IMPORTED_MODULE_9__services_sock_js_service__["a" /* SockJsService */] }
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -142,6 +154,153 @@ var appRoutes = [
 
 /***/ }),
 
+/***/ "../../../../../src/app/chat-message-container/chat-message-container.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".chatMessageContainer {\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.messageContainer {\r\n  margin-bottom: 15px;\r\n  text-align: right;\r\n}\r\n\r\n.messageContainer.other {\r\n  text-align: left;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat-message-container/chat-message-container.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"chatMessageContainer\">\n  <ng-container *ngFor=\"let chatMessage of chatMessages\">\n    <div class=\"messageContainer\" [class.other]=\"chatMessage.senderName !== this.myName\">\n      <app-chat-message [isMe]=\"chatMessage.senderName === this.myName\"\n                        [message]=\"chatMessage.message\"\n                        [date]=\"chatMessage.sentDate\"\n                        [name]=\"chatMessage.senderName\">\n      </app-chat-message>\n    </div>\n  </ng-container>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat-message-container/chat-message-container.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatMessageContainerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ChatMessageContainerComponent = /** @class */ (function () {
+    function ChatMessageContainerComponent() {
+    }
+    ChatMessageContainerComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Array)
+    ], ChatMessageContainerComponent.prototype, "chatMessages", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", String)
+    ], ChatMessageContainerComponent.prototype, "myName", void 0);
+    ChatMessageContainerComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-chat-message-container',
+            template: __webpack_require__("../../../../../src/app/chat-message-container/chat-message-container.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/chat-message-container/chat-message-container.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ChatMessageContainerComponent);
+    return ChatMessageContainerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat-message/chat-message.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".textBubble {\r\n  text-align: left;\r\n  position: relative;\r\n  font-family: sans-serif;\r\n  color: #edfdff;\r\n  display: inline-block;\r\n  padding: 10px 20px;\r\n  max-width: 400px;\r\n}\r\n\r\n.sentText {\r\n  background: -webkit-gradient(linear, left top, left bottom, from(#046ffd), to(#1accef));\r\n  background: linear-gradient(#046ffd, #1accef);\r\n  border-radius: 20px 20px 0px 20px;\r\n  -webkit-box-shadow: -6px 7px 20px -9px black;\r\n          box-shadow: -6px 7px 20px -9px black;\r\n}\r\n\r\n.sentText:after {\r\n  content: '';\r\n  position: absolute;\r\n  width: 23px;\r\n  height: 29px;\r\n  top: 6px;\r\n  left: 6px;\r\n  border-radius: 50%;\r\n  -webkit-box-shadow: -4px -5px 6px -4px white;\r\n          box-shadow: -4px -5px 6px -4px white;\r\n  background-color: transparent;\r\n}\r\n\r\n.sentText:before {\r\n  content: '';\r\n  position: absolute;\r\n  width: 17px;\r\n  height: 17px;\r\n  bottom: -5px;\r\n  right: -17px;\r\n  border-radius: 20% 50% 50% 50%;\r\n  -webkit-box-shadow: -10px 2px 0px 0px #1accef;\r\n          box-shadow: -10px 2px 0px 0px #1accef;\r\n  background-color: transparent;\r\n  z-index: -1;\r\n}\r\n\r\n.recivedText {\r\n  background: -webkit-gradient(linear, left top, left bottom, from(#1a9b45), to(#81efb3));\r\n  background: linear-gradient(#1a9b45, #81efb3);\r\n  border-radius: 20px 20px 20px 0;\r\n  -webkit-box-shadow: 6px 7px 20px -9px black;\r\n          box-shadow: 6px 7px 20px -9px black;\r\n}\r\n\r\n.recivedText:after {\r\n  content: '';\r\n  position: absolute;\r\n  width: 23px;\r\n  height: 29px;\r\n  top: 6px;\r\n  right: 6px;\r\n  border-radius: 50%;\r\n  -webkit-box-shadow: 4px -5px 6px -4px white;\r\n          box-shadow: 4px -5px 6px -4px white;\r\n  background-color: transparent;\r\n}\r\n\r\n.recivedText:before {\r\n  content: '';\r\n  position: absolute;\r\n  width: 17px;\r\n  height: 17px;\r\n  bottom: -5px;\r\n  left: -17px;\r\n  border-radius: 20% 20% 50% 50%;\r\n  -webkit-box-shadow: 10px 2px 0px 0px #81efb3;\r\n          box-shadow: 10px 2px 0px 0px #81efb3;\r\n  background-color: transparent;\r\n  z-index: -1;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat-message/chat-message.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"textBubble\" [class.sentText]=\"isMe\" [class.recivedText]=\"!isMe\">\n  <b>{{name}}</b> - <br/>\n  {{message}}\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/chat-message/chat-message.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatMessageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ChatMessageComponent = /** @class */ (function () {
+    function ChatMessageComponent() {
+    }
+    ChatMessageComponent.prototype.ngOnInit = function () {
+        console.log('Init message: ', this.message);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Boolean)
+    ], ChatMessageComponent.prototype, "isMe", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", String)
+    ], ChatMessageComponent.prototype, "message", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Date)
+    ], ChatMessageComponent.prototype, "date", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", String)
+    ], ChatMessageComponent.prototype, "name", void 0);
+    ChatMessageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-chat-message',
+            template: __webpack_require__("../../../../../src/app/chat-message/chat-message.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/chat-message/chat-message.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ChatMessageComponent);
+    return ChatMessageComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/home/home.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -150,7 +309,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".chatPage {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  width: 80%;\r\n  margin: 20px auto;\r\n  height: 500px;\r\n  border: 3px solid black;\r\n  padding: 20px;\r\n  -webkit-box-shadow: -6px 7px 20px -9px black;\r\n          box-shadow: -6px 7px 20px -9px black;\r\n}", ""]);
 
 // exports
 
@@ -163,7 +322,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Chat home Yes</h1>\n<button (click)=\"connect()\" [disabled]=\"socketIsOpen\">Connect</button>\n<button (click)=\"disconnect()\" [disabled]=\"!socketIsOpen\">Disconnect</button>\n\n<div *ngIf=\"socketIsOpen\">\n  <label>Echo Message: </label><input type=\"text\" #message>\n  <button (click)=\"sendMessage(message.value)\">Send</button>\n</div>\n\n<p #messages></p>"
+module.exports = "<h1>Chat home Yes</h1>\n<button (click)=\"connect()\" [disabled]=\"socketIsOpen\">Connect</button>\n<button (click)=\"disconnect()\" [disabled]=\"!socketIsOpen\">Disconnect</button>\n\n<div *ngIf=\"socketIsOpen\">\n  <label>Your name: </label><input type=\"text\" #nameInput (change)=\"name = nameInput.value\">\n  <label>Echo Message: </label><input type=\"text\" #message>\n  <button (click)=\"sendMessage(message.value)\">Send</button>\n  {{name}}\n  <div class=\"chatPage\">\n    <app-chat-message-container [chatMessages]=\"chatMessagesArray\" [myName]=\"name\">\n    </app-chat-message-container>\n  </div>\n</div>\n\n<p #messages></p>"
 
 /***/ }),
 
@@ -189,7 +348,9 @@ var HomeComponent = /** @class */ (function () {
     function HomeComponent(socketService) {
         this.socketService = socketService;
         this.socketPath = '/gs-guide-websocket';
+        this.subscriptionConnectionArray = [];
         this.socketIsOpen = false;
+        this.chatMessagesArray = [];
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
@@ -197,16 +358,25 @@ var HomeComponent = /** @class */ (function () {
         var _this = this;
         this.messages.nativeElement.innerHTML += "Connecting to url: " + this.socketPath + "<br/>";
         this.socketMessagesSubject = this.socketService.connectToSocket(this.socketPath, ['/topic/greetings']);
-        this.socketMessagesSubject.subscribe(function (sm) {
+        this.subscriptionConnectionArray.push(this.socketMessagesSubject.subscribe(function (sm) {
             switch (sm.queue) {
                 case __WEBPACK_IMPORTED_MODULE_1__services_socket_service__["a" /* GENERAL_QUEUE_ID */]:
                     _this.socketIsOpen = true;
                     _this.messages.nativeElement.innerHTML += "General: Socket Opened successfully, url: " + _this.socketPath + "<br/>";
                     console.log("Socket Opened successfully, url: ", _this.socketPath);
                     break;
-                case '/app/hello':
-                    _this.messages.nativeElement.innerHTML += "/app/hello: Got message back from server: " + sm.body + "<br/>";
+                case '/topic/greetings':
+                    _this.messages.nativeElement.innerHTML += "/topic/greetings: Got message back from server: " + sm.body + "<br/>";
                     console.log("/app/hello: Got message back from server: ", sm.body);
+                    var message = sm.body.substring(sm.body.indexOf("Message: ") + 9);
+                    var senderName = sm.body.substring(sm.body.indexOf("User: ") + 6, sm.body.lastIndexOf("|"));
+                    senderName = senderName.trim();
+                    _this.chatMessagesArray.push({
+                        id: '111',
+                        message: message,
+                        senderName: senderName,
+                        sentDate: new Date()
+                    });
                     break;
                 default:
                     console.log(sm);
@@ -221,22 +391,33 @@ var HomeComponent = /** @class */ (function () {
             _this.socketIsOpen = false;
             _this.messages.nativeElement.innerHTML += "Socket Closed" + "<br/>";
             console.log("Socket Closed");
-        });
+        }));
     };
     HomeComponent.prototype.disconnect = function () {
         if (this.socketIsOpen) {
             this.socketService.disconnect();
         }
+        for (var _i = 0, _a = this.subscriptionConnectionArray; _i < _a.length; _i++) {
+            var sub = _a[_i];
+            sub.unsubscribe();
+        }
     };
     HomeComponent.prototype.sendMessage = function (message) {
         this.socketService.sendMessage('/app/hello', {
-            name: 'Maor Ha Sus',
+            name: this.name,
             message: message,
             date: 'Date'
         });
     };
+    HomeComponent.prototype.ngOnDestroy = function () {
+        for (var _i = 0, _a = this.subscriptionConnectionArray; _i < _a.length; _i++) {
+            var sub = _a[_i];
+            sub.unsubscribe();
+        }
+        this.subscriptionConnectionArray = [];
+    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('messages'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('messages'),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
     ], HomeComponent.prototype, "messages", void 0);
     HomeComponent = __decorate([
@@ -321,7 +502,7 @@ var SockJsService = /** @class */ (function (_super) {
         function (frame) {
             console.log('Connected to: ', url, 'With frame: ', frame);
             _this.isOpen = true;
-            _this.onMessage(__WEBPACK_IMPORTED_MODULE_1__socket_service__["a" /* GENERAL_QUEUE_ID */], true);
+            _this.onMessage(__WEBPACK_IMPORTED_MODULE_1__socket_service__["a" /* GENERAL_QUEUE_ID */], { content: true });
             var _loop_1 = function (queue) {
                 queue.subscription = _this.stompClient.subscribe(queue.id, function (message) {
                     _this.onMessage(queue.id, JSON.parse(message.body));
@@ -334,7 +515,6 @@ var SockJsService = /** @class */ (function (_super) {
             }
         }, function (error) {
             _this.subject.error(error);
-            _this.subject.complete();
         });
         // Disconnecting from old socket if opened
         if (this.subject && !this.subject.closed) {
@@ -395,6 +575,7 @@ var SockJsService = /** @class */ (function (_super) {
             var queue = _a[_i];
             queue.subscription.unsubscribe();
         }
+        this.subscribedQueues = [];
         // Disconnecting
         this.stompClient.disconnect(function () {
             // Compliting the subject observable
@@ -481,7 +662,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });

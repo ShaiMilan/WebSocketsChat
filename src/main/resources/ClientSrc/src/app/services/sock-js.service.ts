@@ -38,7 +38,7 @@ export class SockJsService extends SocketService {
       (frame: Frame) => {
         console.log('Connected to: ', url, 'With frame: ', frame);
         this.isOpen = true;
-        this.onMessage(GENERAL_QUEUE_ID, true);
+        this.onMessage(GENERAL_QUEUE_ID, { content: true });
         // subscribing to the queues
         for(let queue of this.subscribedQueues) {
           queue.subscription = this.stompClient.subscribe(queue.id, (message) => {
@@ -48,7 +48,6 @@ export class SockJsService extends SocketService {
       },
       (error: string) => {
         this.subject.error(error);
-        this.subject.complete();
       }
     );
 
@@ -114,6 +113,7 @@ export class SockJsService extends SocketService {
     for(let queue of this.subscribedQueues) {
       queue.subscription.unsubscribe();
     }
+    this.subscribedQueues = [];
 
     // Disconnecting
     this.stompClient.disconnect(() => {

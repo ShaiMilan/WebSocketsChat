@@ -1,0 +1,71 @@
+.textBubble {
+  text-align: left;
+  position: relative;
+  font-family: sans-serif;
+  color: #edfdff;
+  display: inline-block;
+  padding: 10px 20px;
+  max-width: 400px;
+}
+
+.sentText {
+  background: linear-gradient(#046ffd, #1accef);
+  border-radius: 20px 20px 0px 20px;
+  box-shadow: -6px 7px 20px -9px black;
+}
+
+.sentText:after {
+  content: '';
+  position: absolute;
+  width: 23px;
+  height: 29px;
+  top: 6px;
+  left: 6px;
+  border-radius: 50%;
+  box-shadow: -4px -5px 6px -4px white;
+  background-color: transparent;
+}
+
+.sentText:before {
+  content: '';
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  bottom: -5px;
+  right: -17px;
+  border-radius: 20% 50% 50% 50%;
+  box-shadow: -10px 2px 0px 0px #1accef;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.recivedText {
+  background: linear-gradient(#1a9b45, #81efb3);
+  border-radius: 20px 20px 20px 0;
+  box-shadow: 6px 7px 20px -9px black;
+}
+
+.recivedText:after {
+  content: '';
+  position: absolute;
+  width: 23px;
+  height: 29px;
+  top: 6px;
+  right: 6px;
+  border-radius: 50%;
+  box-shadow: 4px -5px 6px -4px white;
+  background-color: transparent;
+}
+
+.recivedText:before {
+  content: '';
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  bottom: -5px;
+  left: -17px;
+  border-radius: 20% 20% 50% 50%;
+  box-shadow: 10px 2px 0px 0px #81efb3;
+  background-color: transparent;
+  z-index: -1;
+}

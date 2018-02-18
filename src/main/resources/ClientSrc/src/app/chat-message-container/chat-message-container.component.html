@@ -1,0 +1,11 @@
+<div class="chatMessageContainer">
+  <ng-container *ngFor="let chatMessage of chatMessages">
+    <div class="messageContainer" [class.other]="chatMessage.senderName !== this.myName">
+      <app-chat-message [isMe]="chatMessage.senderName === this.myName"
+                        [message]="chatMessage.message"
+                        [date]="chatMessage.sentDate"
+                        [name]="chatMessage.senderName">
+      </app-chat-message>
+    </div>
+  </ng-container>
+</div>

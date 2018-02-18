@@ -3,8 +3,14 @@
 <button (click)="disconnect()" [disabled]="!socketIsOpen">Disconnect</button>
 
 <div *ngIf="socketIsOpen">
+  <label>Your name: </label><input type="text" #nameInput (change)="name = nameInput.value">
   <label>Echo Message: </label><input type="text" #message>
   <button (click)="sendMessage(message.value)">Send</button>
+  {{name}}
+  <div class="chatPage">
+    <app-chat-message-container [chatMessages]="chatMessagesArray" [myName]="name">
+    </app-chat-message-container>
+  </div>
 </div>
 
 <p #messages></p>
